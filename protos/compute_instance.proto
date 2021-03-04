@@ -1,0 +1,30 @@
+syntax= "proto3";
+
+import "gpu_instance.proto";
+package protos;
+
+message ComputeInstanceProfileInfo {
+    uint32 Id = 1;                  
+	uint32 SliceCount = 2;
+	uint32 InstanceCount = 3;
+	uint32 MultiprocessorCount = 4;
+	uint32 SharedCopyEngineCount = 5;
+	uint32 SharedDecoderCount = 6;
+	uint32 SharedEncoderCount = 7;
+	uint32 SharedJpegCount = 8;
+	uint32 SharedOfaCount = 9;
+}
+
+message ComputeInstanceProfileInfos {
+  repeated ComputeInstanceProfileInfo Data = 1;
+}
+
+message ComputeInstanceInfo {
+    GpuInstanceInfo GpuInstanceInfo = 1;
+    uint32 Id = 2;
+    uint32 ProfileId = 3;
+}
+
+message ComputeInstanceInfos {
+  repeated ComputeInstanceInfo Data = 1;
+}

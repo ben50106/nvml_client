@@ -1,0 +1,37 @@
+syntax= "proto3";
+
+package protos;
+
+message GpuInstanceProfileInfo {
+    uint32 Id = 1;                  
+	uint32 IsP2pSupported = 2;
+	uint32 SliceCount = 3;
+	uint32 InstanceCount = 4;
+	uint32 MultiprocessorCount = 5;
+	uint32 CopyEngineCount = 6;
+	uint32 DecoderCount = 7;
+	uint32 EncoderCount = 8;
+	uint32 JpegCount = 9;
+	uint32 OfaCount = 10;
+	uint64 MemorySizeMB = 11;
+}
+
+message GpuInstanceProfileInfos {
+  repeated GpuInstanceProfileInfo Data = 1;
+}
+
+message GpuInstanceInfo {
+	uint32 DeviceId = 1;
+	uint32 Id = 2;
+	uint32 ProfileId = 3;
+	GpuInstancePlacement Placement  = 4;
+}
+
+message GpuInstancePlacement {
+	uint32 Start = 1;
+	uint32 Size = 2;
+}
+
+message GpuInstanceInfos {
+  repeated GpuInstanceInfo Data = 1;
+}

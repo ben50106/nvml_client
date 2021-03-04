@@ -1,0 +1,20 @@
+syntax= "proto3";
+
+import "gpu_instance.proto";
+import "compute_instance.proto";
+import "google/protobuf/empty.proto";
+package protos;
+
+service GpuInstanceController {
+  rpc listGpuInstanceProfile(GpuInstanceInfo) returns (GpuInstanceProfileInfos){}
+  rpc CreateGpuInstance(GpuInstanceInfo) returns (google.protobuf.Empty){}
+  rpc DeleteGpuInstance(GpuInstanceInfo) returns (google.protobuf.Empty){}
+  rpc ListGpuInstanceByProfile(GpuInstanceInfo) returns (GpuInstanceInfos){}
+}
+
+service ComputeInstanceController {
+  rpc listComputeInstanceProfile(GpuInstanceInfo) returns (ComputeInstanceProfileInfos){}
+  rpc CreateComputeInstance(ComputeInstanceInfo) returns (google.protobuf.Empty){}
+  rpc DeleteComputeInstance(ComputeInstanceInfo) returns (google.protobuf.Empty){}
+  rpc ListComputeInstanceByProfile(ComputeInstanceInfo) returns (ComputeInstanceInfos){}
+}
